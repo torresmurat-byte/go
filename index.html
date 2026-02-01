@@ -3,35 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Переход в Telegram...</title>
-    <meta http-equiv="refresh" content="0; url=tg://resolve?domain=gonzoshow">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
-        function openTelegram() {
-            // Твоя новая проверенная ссылка от Jusl
-            var juslUrl = "https://l.jusl.ru/r5hugJh";
-            // Прямая ссылка-команда для Telegram
-            var tgProtocol = "tg://resolve?domain=gonzoshow";
-            
-            // Пробуем открыть приложение напрямую
-            window.location.href = tgProtocol;
-            
-            // Если через 400мс приложение не открылось, переходим на Jusl
-            setTimeout(function() {
-                window.location.href = juslUrl;
-            }, 400);
+        // Убираем автоматический tg://, который вызывает ошибку на iPhone
+        function redirectToJusl() {
+            window.location.href = "https://l.jusl.ru/r5hugJh";
         }
-        // Запуск функции при загрузке страницы
-        window.onload = openTelegram;
+        // Запускаем переход через 1 секунду, чтобы страница успела прогрузиться
+        setTimeout(redirectToJusl, 1000);
     </script>
 </head>
-<body style="background-color: #000; color: #fff; text-align: center; font-family: -apple-system, BlinkMacSystemFont, sans-serif; padding-top: 100px;">
-    <div style="max-width: 300px; margin: 0 auto;">
-        <h2 style="font-size: 22px;">Загрузка...</h2>
-        <p style="color: #ccc; font-size: 16px;">Перенаправляем вас в канал «Выручалка»</p>
-        <br>
-        <a href="https://l.jusl.ru/r5hugJh" style="display: inline-block; padding: 12px 24px; background-color: #24A1DE; color: white; text-decoration: none; border-radius: 50px; font-weight: bold;">
-            ОТКРЫТЬ TELEGRAM
+<body style="background-color: #000; color: #fff; text-align: center; font-family: -apple-system, sans-serif; padding-top: 100px;">
+    <div style="padding: 20px;">
+        <h2 style="font-size: 22px;">Почти готово!</h2>
+        <p style="color: #ccc; font-size: 16px;">Переходим в канал «Выручалка»...</p>
+        <br><br>
+        <a href="https://l.jusl.ru/r5hugJh" style="display: inline-block; padding: 18px 36px; background-color: #24A1DE; color: white; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 18px;">
+            ОТКРЫТЬ ТЕЛЕГРАМ
         </a>
+        <br><br>
+        <p style="font-size: 12px; color: #666;">Если не перешло автоматически, нажмите на кнопку выше</p>
     </div>
 </body>
 </html>
