@@ -6,24 +6,32 @@
     <meta http-equiv="refresh" content="0; url=tg://resolve?domain=gonzoshow">
     
     <script>
-        // Функция для прыжка прямо в приложение
         function openTelegram() {
-            var fallbackUrl = "https://tg.rejusl.online/gonzoshow";
-            var directUrl = "tg://resolve?domain=gonzoshow";
+            // Твоя новая проверенная ссылка от Jusl
+            var juslUrl = "https://l.jusl.ru/r5hugJh";
+            // Прямая ссылка-команда для Telegram
+            var tgProtocol = "tg://resolve?domain=gonzoshow";
             
-            // Пробуем открыть напрямую через протокол Telegram
-            window.location.href = directUrl;
+            // Пробуем открыть приложение напрямую
+            window.location.href = tgProtocol;
             
-            // Если через 500мс ничего не произошло (например, не установлен ТГ), открываем через мост
+            // Если через 400мс приложение не открылось, переходим на Jusl
             setTimeout(function() {
-                window.location.href = fallbackUrl;
-            }, 500);
+                window.location.href = juslUrl;
+            }, 400);
         }
+        // Запуск функции при загрузке страницы
         window.onload = openTelegram;
     </script>
 </head>
-<body style="background-color: #000; color: #fff; text-align: center; font-family: sans-serif; padding-top: 50px;">
-    <h2>Загрузка...</h2>
-    <p>Если переход не произошел, <a href="https://tg.rejusl.online/gonzoshow" style="color: #24A1DE;">нажмите здесь</a>.</p>
+<body style="background-color: #000; color: #fff; text-align: center; font-family: -apple-system, BlinkMacSystemFont, sans-serif; padding-top: 100px;">
+    <div style="max-width: 300px; margin: 0 auto;">
+        <h2 style="font-size: 22px;">Загрузка...</h2>
+        <p style="color: #ccc; font-size: 16px;">Перенаправляем вас в канал «Выручалка»</p>
+        <br>
+        <a href="https://l.jusl.ru/r5hugJh" style="display: inline-block; padding: 12px 24px; background-color: #24A1DE; color: white; text-decoration: none; border-radius: 50px; font-weight: bold;">
+            ОТКРЫТЬ TELEGRAM
+        </a>
+    </div>
 </body>
 </html>
