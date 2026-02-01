@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Переход в Telegram...</title>
+    <meta http-equiv="refresh" content="0; url=tg://resolve?domain=gonzoshow">
+    
+    <script>
+        // Функция для прыжка прямо в приложение
+        function openTelegram() {
+            var fallbackUrl = "https://tg.rejusl.online/gonzoshow";
+            var directUrl = "tg://resolve?domain=gonzoshow";
+            
+            // Пробуем открыть напрямую через протокол Telegram
+            window.location.href = directUrl;
+            
+            // Если через 500мс ничего не произошло (например, не установлен ТГ), открываем через мост
+            setTimeout(function() {
+                window.location.href = fallbackUrl;
+            }, 500);
+        }
+        window.onload = openTelegram;
+    </script>
+</head>
+<body style="background-color: #000; color: #fff; text-align: center; font-family: sans-serif; padding-top: 50px;">
+    <h2>Загрузка...</h2>
+    <p>Если переход не произошел, <a href="https://tg.rejusl.online/gonzoshow" style="color: #24A1DE;">нажмите здесь</a>.</p>
+</body>
+</html>
